@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Video Downloader</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <h1>Video Downloader</h1>
+        <input type="text" id="video-url" placeholder="Enter video URL">
+        <button id="fetch-title-button">Get Video Title</button>
+        <div id="video-title"></div>
+        <select id="quality" name="quality" aria-placeholder="Select quality" disabled>
+            <option value="" >Select video quality</option>
+            <option value="bestvideo[height<=144]+bestaudio/best">144p</option>
+            <option value="bestvideo[height<=240]+bestaudio/best">240p</option>
+            <option value="bestvideo[height<=360]+bestaudio/best">360p</option>
+            <option value="bestvideo[height<=480]+bestaudio/best">480p</option>
+            <option value="bestvideo[height<=720]+bestaudio/best">720p</option>
+            <option value="bestvideo[height<=1080]+bestaudio/best">1080p</option>
+            <option value="bestvideo[height<=1440]+bestaudio/best">2k</option>
+            <option value="bestvideo[height<=2160]+bestaudio/best">4k</option>
+            <option value="bestvideo[height<=4320]+bestaudio/best">8k</option>
+            <option value="bestvideo[height<=8640]+bestaudio/best">16k</option>
+        </select>
+        <select name="audio" id="audio" disabled>
+            <option value="">Select audio quality</option>
+            <option value="64">64kbps</option>
+            <option value="96">96kbps</option>
+            <option value="128">128kbps</option>
+            <option value="320">320kbps</option>
+        </select>
+        <button id="download-button" disabled>Download</button>
+        <div id="progress">
+            <div id="progress-bar"></div>
+        </div>
+        <div id="speed"></div>
+    </div>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
